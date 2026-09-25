@@ -34,3 +34,27 @@
  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
  dialog.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){current=(current+1)%photos.length;showPhoto();}if(e.key==='ArrowLeft'){current=(current-1+photos.length)%photos.length;showPhoto();}});
 })();
+/* Version 2: temporary forms never transmit or persist user-entered information. */
+(() => {
+ 'use strict';
+ document.querySelectorAll('[data-form]').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+   const modal=document.getElementById(`${trigger.dataset.form}-dialog`);
+   if(!modal)return;
+   modal.querySelector('form').reset();
+   const packages=modal.querySelector('#sponsorship-package');
+   if(packages)packages.value=trigger.dataset.package||'';
+   modal.showModal();modal.scrollTop=0;document.body.classList.add('locked');
+  });
+ });
+ document.querySelectorAll('.form-dialog').forEach(modal => {
+  const form=modal.querySelector('form');
+  form.addEventListener('submit',event=>event.preventDefault());
+  modal.querySelectorAll('[data-form-close]').forEach(button=>button.addEventListener('click',()=>modal.close()));
+  modal.addEventListener('click',event=>{
+   const box=modal.getBoundingClientRect();
+   if(event.target===modal&&(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom))modal.close();
+  });
+  modal.addEventListener('close',()=>{form.reset();if(!document.querySelector('dialog[open]'))document.body.classList.remove('locked');});
+ });
+})();

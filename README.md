@@ -1,6 +1,6 @@
-# Priority Automotive Charities — Version 1
+# Priority Automotive Charities — Version 2
 
-Open index.html in a browser. Upload index.html, styles.css, scripts.js, and the assets folder together to any static web host. No build tools are required.
+Open index.html in a browser. Upload index.html, styles.css, scripts.js, and the images folder together to any static web host. No build tools are required.
 
 ## Included
 - One responsive landing page with separate CSS and JavaScript.
@@ -11,8 +11,14 @@ Open index.html in a browser. Upload index.html, styles.css, scripts.js, and the
 - Images are stored locally as optimized WebP files; supplied logo remains PNG. Fonts are bundled locally with system fallbacks. No remote assets are required to render the page.
 - asset-inventory.json maps source image URLs to local assets. source-content.txt preserves extracted original editorial text for reference.
 
-## Existing services
-Donate connects to the exact secure Deluxe payment URL linked on the original website. Sponsorship inquiries, contact submissions and 2027 applications link to their original forms. Sponsorship package inquiries also open a pre-addressed email to Troy Clifton. This static package does not implement a new payment or form-processing backend. Those existing URLs must remain available, or be replaced with new service URLs when the old website is retired.
+## Forms and services
+Contact, sponsorship inquiries (including individual package buttons), and the 2027 beneficiary application open accessible pop-up previews. They have no submission endpoint, no storage and no enabled submit button. Entered fields clear on close. File uploads are disabled. Donate still connects to the existing secure Deluxe payment provider; direct phone/email and social links are retained.
+
+## Version 2 changes
+Header logo proportions corrected and linked to page top; floating bottom-right Top button; updated SUPPORTING LOCAL CHILDREN. LASTING CHANGE. headline; local temporary form modals; every image renamed prioritycharities-0001, prioritycharities-0002, etc. (with its file extension) and moved into images/. Bundled font assets are under images/fonts/. The supplied logo is images/prioritycharities-0001.png. image-uid-map.json records all 145 image UIDs.
+
+## Install on GitHub Pages
+Replace index.html, styles.css and scripts.js together and upload the complete images folder. The old assets folder is no longer referenced. Hard-refresh after deployment if your browser retains earlier CSS.
 
 ## Content review before replacing the production website
 - Both listed 2026 events are past as of September 24, 2026 and are labeled accordingly. No 2027 event dates were invented.
