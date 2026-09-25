@@ -723,5 +723,11 @@
     "uid": "prioritycharities-0145",
     "previous_file": "assets/fe78ed1d-00535-don-monteaux-photography-2.webp",
     "file": "images/prioritycharities-0145.webp"
+  },
+  {
+    "uid": "prioritycharities-0146",
+    "previous_file": "images/prioritycharities-0001.png",
+    "file": "images/prioritycharities-0146.svg",
+    "note": "Padded header viewport embedding the original logo without altering artwork."
   }
 ]

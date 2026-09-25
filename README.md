@@ -1,10 +1,10 @@
-# Priority Automotive Charities — Version 2
+# Priority Automotive Charities — Version 3
 
 Open index.html in a browser. Upload index.html, styles.css, scripts.js, and the images folder together to any static web host. No build tools are required.
 
 ## Included
 - One responsive landing page with separate CSS and JavaScript.
-- Content from 11 publicly linked source pages, complete 62-entry beneficiary directory, 33 published sponsorship packages, 10 homepage sponsor acknowledgments, 2024 sponsor poster, 19-photo 2024 gallery, Charity Bowl and community albums, archive news links, and original site imagery.
+- Content from 11 publicly linked source pages, complete 62-entry beneficiary directory, 33 published sponsorship packages, 10 homepage sponsor acknowledgments, 2024 sponsor poster, 19-photo 2024 gallery, Charity Bowl and community albums, community news highlights, and original site imagery.
 - User-supplied Priority Automotive Charities logo.
 - Parallax imagery, scroll reveals, once-only impact counters, hover effects, expandable details, mobile menu, scroll progress, and keyboard-accessible photo viewer.
 - Reduced-motion preferences are respected. Primary content remains readable without JavaScript.
@@ -26,7 +26,16 @@ Replace index.html, styles.css and scripts.js together and upload the complete i
 - Founder's letter contains older $3 million / 35 charity figures and is labeled historical. The donate page's old 35-charity claim was generalized in current-facing copy, with original wording preserved in source-content.txt.
 - Golf event webpage lists 10:00 am registration, 10:50 am welcome, 11:00 am shotgun, and 4:00 pm awards. These are copied as the published 2026 schedule.
 - Several sponsorship prices differ between the original visible package cards and its form dropdown. This redesign uses the visible package-card prices and asks visitors to confirm current pricing/availability. Examples: Music $50,000 vs $35,000; Apparel $25,000 vs $30,000; Putting Green $10,000 vs $15,000; Party Bar $10,000 vs $15,000; Party/Golf $15,000 vs $10,000.
-- Existing news links are archived external coverage and may be moved by their publishers.
+- Community highlights are text-only; original source links remain in the source-content archive for reference.
 
 ## Editing
 Update page copy and dates in index.html. Set data-count on each impact number and update its readable fallback text together. Add photos as .gallery-button elements within .gallery-grid; scripts.js automatically enables the lightbox. Styles use red, black, white, and cool gray variables at the top of styles.css.
+
+## Version 3 changes
+- Supplied logo embedded in padded SVG viewport (images/prioritycharities-0146.svg); no negative header offsets.
+- Full formatted counter value reserves layout space while the overlaid value animates. Fixed grid tracks, tabular numerals, and non-wrapping numbers prevent movement.
+- Red mobile menu button with white text.
+- SUPPORTING LASTING CHANGE hero eyebrow and red > > > markers on all eyebrow headings.
+- Community section is now six text-only highlights, led by 2027 planning and the September 15, 2026 golf tournament. No broken press links remain in this section.
+- Footer privacy policy and cookie preference dialogs. The privacy text is a draft describing this preview, not an approved final production policy; confirm actual operational practices when integrating production services. Drafting reference: https://www.ftc.gov/business-guidance/privacy-security/consumer-privacy
+- Cookie toggle defaults green/on with requested text; clicking sets red/off and requested opt-out text. It is a clearly labeled demonstration only, stored in page memory until reload. No advertising cookies, tracking, consent storage, or opt-out network requests are added. Connect the real provider in the next update.

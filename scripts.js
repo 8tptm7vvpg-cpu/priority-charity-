@@ -47,7 +47,7 @@
    modal.showModal();modal.scrollTop=0;document.body.classList.add('locked');
   });
  });
- document.querySelectorAll('.form-dialog').forEach(modal => {
+ document.querySelectorAll('.form-dialog:not(.policy-dialog)').forEach(modal => {
   const form=modal.querySelector('form');
   form.addEventListener('submit',event=>event.preventDefault());
   modal.querySelectorAll('[data-form-close]').forEach(button=>button.addEventListener('click',()=>modal.close()));
@@ -56,5 +56,25 @@
    if(event.target===modal&&(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom))modal.close();
   });
   modal.addEventListener('close',()=>{form.reset();if(!document.querySelector('dialog[open]'))document.body.classList.remove('locked');});
+ });
+})();
+/* Privacy dialogs and cookie UI demonstration: no cookies or storage are written. */
+(() => {
+ 'use strict';
+ document.querySelectorAll('[data-policy]').forEach(trigger=>trigger.addEventListener('click',()=>{
+  const modal=document.getElementById(`${trigger.dataset.policy}-dialog`);
+  modal.showModal();modal.scrollTop=0;document.body.classList.add('locked');
+ }));
+ document.querySelectorAll('.policy-dialog').forEach(modal=>{
+  modal.querySelectorAll('[data-policy-close]').forEach(button=>button.addEventListener('click',()=>modal.close()));
+  modal.addEventListener('click',event=>{const box=modal.getBoundingClientRect();if(event.target===modal&&(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom))modal.close();});
+  modal.addEventListener('close',()=>{if(!document.querySelector('dialog[open]'))document.body.classList.remove('locked');});
+ });
+ document.getElementById('cookie-preference-form').addEventListener('submit',event=>event.preventDefault());
+ const toggle=document.getElementById('cookie-toggle'),status=document.getElementById('cookie-status');
+ toggle.addEventListener('click',()=>{
+  const enabled=toggle.getAttribute('aria-checked')!=='true';
+  toggle.setAttribute('aria-checked',String(enabled));
+  status.textContent=enabled?'You are currently opted into cookies':'You have opted out of advertising cookies';
  });
 })();
